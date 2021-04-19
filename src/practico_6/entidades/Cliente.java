@@ -25,6 +25,11 @@ public class Cliente {
         this.telefono = telefono;
     }
 
+    @Override
+    public String toString() {
+        return "Cliente{" + "dni=" + dni + ", apellido=" + apellido + ", nombre=" + nombre + ", ciudad=" + ciudad + ", telefono=" + telefono + '}';
+    }
+
     public long getDni() {
         return dni;
     }

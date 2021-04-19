@@ -6,6 +6,7 @@
 package practico_6.entidades;
 
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Set;
 
 /**
@@ -19,28 +20,46 @@ public class Directorio {
         directorio.add(new Cliente(dni, apellido, nombre, ciudad, telefono));
     }
     
-    public void buscarCliente(long telefono) {
-             
+    public String buscarCliente(long telefono) {
+        for (Cliente cliente : directorio) {
+            if (cliente.getTelefono()==telefono) {
+                return cliente.toString();
+            }
+        }
+        return null;
     }
     
     
-    public void buscarTelefono(String apellido) {
-        
+    public String buscarTelefono(String apellido) {
+        for (Cliente cliente : directorio) {
+            if (cliente.getApellido()==apellido) {
+                return cliente.toString();
+            }
+        }
+        return null;
     }
     
-    public void buscarClientes (String apellido) {
-        
+    public Set<Cliente> buscarClientes (String apellido) {
+        Set<Cliente> filtro = new HashSet<>();
+            for (Cliente cliente : directorio) {
+                if (cliente.getApellido()==apellido) {
+                    filtro.add(cliente);
+                }
+            }
+        return filtro;
     }
-    
-    public void borrarCliente (Cliente cliente) {
-        directorio.remove(cliente);
+    public void borrarCliente (long telefono) {
+        for (Cliente cliente : directorio) {
+            if (cliente.getTelefono()==telefono) {
+                directorio.remove(cliente);
+            }
+        }
     }
 
     public HashSet<Cliente> getDirectorio() {
         return directorio;
         
     }
-    
-    
-}
 
+      
+}

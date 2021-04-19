@@ -23,7 +23,7 @@ public class Practico_6 {
         Directorio d1 = new Directorio();
         d1.agregarCliente(25381304, "Pogliese", "Javier", "Merlo", 266481043);
         d1.agregarCliente(27462011, "Abram", "Paula", "Rosario", 266427427);
-        
+        d1.agregarCliente(20381774, "Pogliese", "Tiziano", "Merlo", 266443278);
         
         Iterator<Cliente> it = d1.getDirectorio().iterator();
          while (it.hasNext()) {
@@ -31,7 +31,11 @@ public class Practico_6 {
         System.out.println(it.next().getApellido());
          }
            
-         
+        System.out.println(d1.buscarCliente(266481043));
+        System.out.println(d1.buscarTelefono("Abram"));
+        System.out.println(d1.buscarClientes("Pogliese"));
+        d1.borrarCliente(266481043);
+        System.out.println(d1.getDirectorio());
         
     }
     

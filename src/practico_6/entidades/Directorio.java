@@ -5,58 +5,72 @@
  */
 package practico_6.entidades;
 
-import java.util.HashSet;
+
 import java.util.Iterator;
 import java.util.Set;
+import java.util.TreeMap;
 
 /**
  *
  * @author Usuario
  */
 public class Directorio {
-    protected HashSet <Cliente> directorio = new HashSet();
+    protected TreeMap <Long,Cliente> directorio = new TreeMap();
     
-    public void agregarCliente(long dni, String apellido, String nombre, String ciudad, long telefono) {
-        directorio.add(new Cliente(dni, apellido, nombre, ciudad, telefono));
+    public Cliente agregarCliente(long telefono, long dni, String apellido, String nombre, String ciudad, String domicilio) {
+        return directorio.put(telefono, new Cliente(dni, apellido, nombre, ciudad, domicilio));
+    }                          
+    
+    public Cliente buscarCliente(long telefono) {
+        return directorio.get(telefono);
     }
     
-    public String buscarCliente(long telefono) {
-        for (Cliente cliente : directorio) {
-            if (cliente.getTelefono()==telefono) {
-                return cliente.toString();
+    
+    public TreeMap buscarClientes(String ciudad) {
+        TreeMap <Long,Cliente> filtro = new TreeMap<>();
+        Set <Long> claves = directorio.keySet();
+        for (long key:claves) {
+            if (directorio.get(key).getCiudad().equals(ciudad)) {
+                filtro.put(key, directorio.get(key));
             }
         }
-        return null;
+        return filtro;
     }
     
-    
-    public String buscarTelefono(String apellido) {
-        for (Cliente cliente : directorio) {
-            if (cliente.getApellido()==apellido) {
-                return cliente.toString();
-            }
-        }
-        return null;
-    }
-    
-    public Set<Cliente> buscarClientes (String apellido) {
-        Set<Cliente> filtro = new HashSet<>();
-            for (Cliente cliente : directorio) {
-                if (cliente.getApellido()==apellido) {
-                    filtro.add(cliente);
+    public TreeMap <Long,Cliente> buscarTelefono (String apellido) {
+        TreeMap <Long,Cliente> filtro = new TreeMap<>();
+        Set <Long> claves = directorio.keySet();
+            for (long key:claves) {
+                if (directorio.get(key).getApellido().equals(apellido)) {
+                    filtro.put(key, directorio.get(key));
                 }
             }
         return filtro;
     }
-    public void borrarCliente (long telefono) {
-        for (Cliente cliente : directorio) {
-            if (cliente.getTelefono()==telefono) {
-                directorio.remove(cliente);
+    public Cliente borrarCliente (long dni) {
+        Set <Long> claves = directorio.keySet();
+            for (long key:claves) {
+                if (directorio.get(key).getDni()==dni) {
+                    return directorio.remove(key);
+                    
+                }
             }
-        }
+        return null;    
     }
-
-    public HashSet<Cliente> getDirectorio() {
+    
+    public Cliente buscarClienteDni (long dni) {
+        Set <Long> claves = directorio.keySet();
+            for (long key:claves) {
+                if (directorio.get(key).getDni()==dni) {
+                    return directorio.get(key);
+                    
+                }
+            }
+        return null;    
+    }
+        
+    
+    public TreeMap<Long,Cliente> getDirectorio() {
         return directorio;
         
     }

@@ -6,7 +6,7 @@
 package practico_6.principal;
 
 import practico_6.entidades.*;
-
+import practico_6.formularios.*;
 import java.util.Iterator;
 
 /**
@@ -19,24 +19,24 @@ public class Practico_6 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
-        Directorio d1 = new Directorio();
-        d1.agregarCliente(25381304, "Pogliese", "Javier", "Merlo", 266481043);
-        d1.agregarCliente(27462011, "Abram", "Paula", "Rosario", 266427427);
-        d1.agregarCliente(20381774, "Pogliese", "Tiziano", "Merlo", 266443278);
-        
-        Iterator<Cliente> it = d1.getDirectorio().iterator();
-         while (it.hasNext()) {
- 
-        System.out.println(it.next().getApellido());
-         }
-           
-        System.out.println(d1.buscarCliente(266481043));
-        System.out.println(d1.buscarTelefono("Abram"));
-        System.out.println(d1.buscarClientes("Pogliese"));
-        d1.borrarCliente(266481043);
-        System.out.println(d1.getDirectorio());
-        
+
+            Directorio d1 = new Directorio();
+            d1.agregarCliente(478205, 25381304, "Pogliese", "Javier", "Merlo", "gribaudo 305");
+            d1.agregarCliente(478111, 27462011, "Abram", "Paula", "Merlo", "gribaudo 305");
+            d1.agregarCliente(478205, 25381304, "Pogliese", "Javier", "Merlo", "gribaudo 305");
+            d1.agregarCliente(266481437, 25381304, "Pogliese", "Javier", "Merlo", "gribaudo 305");
+            d1.agregarCliente(266481111, 25381111, "Orti", "pablo", "Rosario", "gribaudo 305");
+
+            System.out.println("de merlo");
+            System.out.println(d1.buscarClientes("Merlo"));
+            System.out.println("478111");
+            System.out.println(d1.buscarCliente(478111));
+            System.out.println("Pogliese");
+            System.out.println(d1.buscarTelefono("Pogliese").firstEntry());
+            System.out.println("borrar");
+            System.out.println(d1.borrarCliente(25381304));
+            System.out.println("dire");
+
     }
     
 }

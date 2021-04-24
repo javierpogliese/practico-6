@@ -7,7 +7,13 @@
         <BevelBorder/>
       </Border>
     </Property>
+    <Property name="nextFocusableComponent" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+      <ComponentRef name="dni"/>
+    </Property>
   </Properties>
+  <AccessibilityProperties>
+    <Property name="AccessibleContext.accessibleDescription" type="java.lang.String" value=""/>
+  </AccessibilityProperties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
   </SyntheticProperties>
@@ -26,15 +32,15 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
-              <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Component id="jLabel6" min="-2" pref="65" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="direccion" min="-2" pref="239" max="-2" attributes="0"/>
+                  </Group>
                   <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="jLabel1" min="-2" pref="65" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="dni" min="-2" pref="140" max="-2" attributes="0"/>
-                      </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="jLabel2" min="-2" pref="65" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -48,39 +54,57 @@
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="jLabel4" min="-2" pref="65" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="ciudad" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Component id="jbBorrar" min="-2" pref="88" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="jbSalir" min="-2" pref="88" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="ciudad" min="-2" pref="239" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="jLabel5" min="-2" pref="65" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="jLabel5" min="-2" pref="65" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="telefono" min="-2" pref="140" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Component id="jLabel1" min="-2" pref="65" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="dni" min="-2" pref="140" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="telefono" min="-2" pref="140" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                      <Component id="guardar" min="-2" pref="87" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="nuevo" min="-2" pref="88" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="salir" min="-2" pref="88" max="-2" attributes="0"/>
+                      <Component id="jbBuscar" min="-2" pref="88" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="55" max="32767" attributes="0"/>
+              <EmptySpace pref="49" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Component id="jLabel1" max="32767" attributes="0"/>
-                  <Component id="dni" max="32767" attributes="0"/>
+                  <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                      <Component id="dni" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jbBuscar" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="telefono" alignment="0" max="32767" attributes="0"/>
+                  <Component id="jLabel5" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jLabel2" min="-2" pref="20" max="-2" attributes="0"/>
-                  <Component id="apellido" min="-2" pref="20" max="-2" attributes="0"/>
+                  <Component id="apellido" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -94,16 +118,15 @@
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="telefono" alignment="0" max="32767" attributes="0"/>
-                  <Component id="jLabel5" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
+                  <Component id="direccion" alignment="0" max="32767" attributes="0"/>
+                  <Component id="jLabel6" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="17" max="32767" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="guardar" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
-                  <Component id="nuevo" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
-                  <Component id="salir" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
+                  <Component id="jbSalir" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
+                  <Component id="jbBorrar" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+              <EmptySpace pref="13" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -115,7 +138,13 @@
           <Font name="Calibri" size="14" style="0"/>
         </Property>
         <Property name="name" type="java.lang.String" value="" noResource="true"/>
+        <Property name="nextFocusableComponent" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+          <ComponentRef name="jbBuscar"/>
+        </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dniActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
@@ -135,6 +164,10 @@
     </Component>
     <Component class="javax.swing.JTextField" name="apellido">
       <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="cc" green="ff" red="ff" type="rgb"/>
+        </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Calibri" size="14" style="0"/>
         </Property>
@@ -158,6 +191,10 @@
     </Component>
     <Component class="javax.swing.JTextField" name="ciudad">
       <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="cc" green="ff" red="ff" type="rgb"/>
+        </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Calibri" size="14" style="0"/>
         </Property>
@@ -165,6 +202,10 @@
     </Component>
     <Component class="javax.swing.JTextField" name="nombre">
       <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="cc" green="ff" red="ff" type="rgb"/>
+        </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Calibri" size="14" style="0"/>
         </Property>
@@ -180,39 +221,77 @@
     </Component>
     <Component class="javax.swing.JTextField" name="telefono">
       <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="cc" green="ff" red="ff" type="rgb"/>
+        </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Calibri" size="14" style="0"/>
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="guardar">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Calibri" size="16" style="0"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Guardar"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="guardarActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="nuevo">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Calibri" size="16" style="0"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Nuevo"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nuevoActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="salir">
+    <Component class="javax.swing.JButton" name="jbSalir">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Calibri" size="16" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Salir"/>
+        <Property name="nextFocusableComponent" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+          <ComponentRef name="dni"/>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbSalirActionPerformed"/>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jbSalirKeyPressed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jbBorrar">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Calibri" size="16" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Borrar"/>
+        <Property name="nextFocusableComponent" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+          <ComponentRef name="jbSalir"/>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbBorrarActionPerformed"/>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jbBorrarKeyPressed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jbBuscar">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Calibri" size="16" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Buscar"/>
+        <Property name="nextFocusableComponent" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+          <ComponentRef name="jbBorrar"/>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbBuscarActionPerformed"/>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jbBuscarKeyPressed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel6">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Calibri" size="14" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="DIRECCION"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="direccion">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="cc" green="ff" red="ff" type="rgb"/>
+        </Property>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Calibri" size="14" style="0"/>
+        </Property>
       </Properties>
     </Component>
   </SubComponents>

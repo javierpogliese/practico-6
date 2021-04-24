@@ -15,19 +15,19 @@ public class Cliente {
     protected String apellido;
     protected String nombre;
     protected String ciudad;
-    protected long telefono;
+    protected String domicilio;
 
-    public Cliente(long dni, String apellido, String nombre, String ciudad, long telefono) {
+    public Cliente(long dni, String apellido, String nombre, String ciudad, String domicilio) {
         this.dni = dni;
         this.apellido = apellido;
         this.nombre = nombre;
         this.ciudad = ciudad;
-        this.telefono = telefono;
+        this.domicilio = domicilio;
     }
 
     @Override
     public String toString() {
-        return "Cliente{" + "dni=" + dni + ", apellido=" + apellido + ", nombre=" + nombre + ", ciudad=" + ciudad + ", telefono=" + telefono + '}';
+        return "Cliente{" + "dni=" + dni + ", apellido=" + apellido + ", nombre=" + nombre + ", ciudad=" + ciudad + ", domicilio=" + domicilio + '}';
     }
 
     public long getDni() {
@@ -46,9 +46,10 @@ public class Cliente {
         return ciudad;
     }
 
-    public long getTelefono() {
-        return telefono;
+    public String getDomicilio() {
+        return domicilio;
     }
+
 
     @Override
     public int hashCode() {

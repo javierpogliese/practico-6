@@ -1,5 +1,8 @@
 package practico_6.formularios;
 
+import javax.swing.JOptionPane;
+import practico_6.entidades.*;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -11,12 +14,14 @@ package practico_6.formularios;
  * @author Usuario
  */
 public class BuscarTelefono extends javax.swing.JInternalFrame {
-
+    private Directorio directorio;
     /**
      * Creates new form Agregar_clientes
      */
-    public BuscarTelefono() {
+    public BuscarTelefono(Directorio directorio) {
+        this.directorio = directorio;
         initComponents();
+
     }
 
     /**
@@ -40,11 +45,22 @@ public class BuscarTelefono extends javax.swing.JInternalFrame {
         telefono = new javax.swing.JTextField();
         jbSalir = new javax.swing.JButton();
         jbBuscar = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        direccion = new javax.swing.JTextField();
+        jbNuevo = new javax.swing.JButton();
 
         setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        setTitle(" por teléfono");
         setNextFocusableComponent(telefono);
+        setPreferredSize(new java.awt.Dimension(610, 340));
+        addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                formFocusGained(evt);
+            }
+        });
 
         dni.setEditable(false);
+        dni.setBackground(new java.awt.Color(255, 255, 204));
         dni.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         dni.setName(""); // NOI18N
 
@@ -55,6 +71,7 @@ public class BuscarTelefono extends javax.swing.JInternalFrame {
         jLabel2.setText("APELLIDO");
 
         apellido.setEditable(false);
+        apellido.setBackground(new java.awt.Color(255, 255, 204));
         apellido.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
 
         jLabel3.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
@@ -64,9 +81,11 @@ public class BuscarTelefono extends javax.swing.JInternalFrame {
         jLabel4.setText("CIUDAD");
 
         ciudad.setEditable(false);
+        ciudad.setBackground(new java.awt.Color(255, 255, 204));
         ciudad.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
 
         nombre.setEditable(false);
+        nombre.setBackground(new java.awt.Color(255, 255, 204));
         nombre.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
 
         jLabel5.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
@@ -74,6 +93,11 @@ public class BuscarTelefono extends javax.swing.JInternalFrame {
 
         telefono.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         telefono.setNextFocusableComponent(jbBuscar);
+        telefono.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                telefonoActionPerformed(evt);
+            }
+        });
 
         jbSalir.setFont(new java.awt.Font("Calibri", 0, 16)); // NOI18N
         jbSalir.setText("Salir");
@@ -83,10 +107,47 @@ public class BuscarTelefono extends javax.swing.JInternalFrame {
                 jbSalirActionPerformed(evt);
             }
         });
+        jbSalir.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jbSalirKeyPressed(evt);
+            }
+        });
 
         jbBuscar.setFont(new java.awt.Font("Calibri", 0, 16)); // NOI18N
         jbBuscar.setText("Buscar");
-        jbBuscar.setNextFocusableComponent(jbSalir);
+        jbBuscar.setNextFocusableComponent(jbNuevo);
+        jbBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbBuscarActionPerformed(evt);
+            }
+        });
+        jbBuscar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jbBuscarKeyPressed(evt);
+            }
+        });
+
+        jLabel6.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        jLabel6.setText("DOMICILIO");
+
+        direccion.setEditable(false);
+        direccion.setBackground(new java.awt.Color(255, 255, 204));
+        direccion.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+
+        jbNuevo.setFont(new java.awt.Font("Calibri", 0, 16)); // NOI18N
+        jbNuevo.setText("Nuevo");
+        jbNuevo.setToolTipText("");
+        jbNuevo.setNextFocusableComponent(jbSalir);
+        jbNuevo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbNuevoActionPerformed(evt);
+            }
+        });
+        jbNuevo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jbNuevoKeyPressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -97,6 +158,10 @@ public class BuscarTelefono extends javax.swing.JInternalFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(28, 28, 28)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(direccion, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addGroup(layout.createSequentialGroup()
                                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -123,14 +188,16 @@ public class BuscarTelefono extends javax.swing.JInternalFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(jbBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(157, 157, 157)
+                        .addGap(131, 131, 131)
+                        .addComponent(jbNuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
                         .addComponent(jbSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(49, Short.MAX_VALUE))
+                .addContainerGap(250, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(21, Short.MAX_VALUE)
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(telefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jbBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -152,8 +219,14 @@ public class BuscarTelefono extends javax.swing.JInternalFrame {
                     .addComponent(ciudad)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jbSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(direccion)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jbSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jbNuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(13, Short.MAX_VALUE))
         );
 
         getAccessibleContext().setAccessibleDescription("");
@@ -165,17 +238,91 @@ public class BuscarTelefono extends javax.swing.JInternalFrame {
         dispose();
     }//GEN-LAST:event_jbSalirActionPerformed
 
+    private void telefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_telefonoActionPerformed
+        jbBuscar.setFocusable(true);
+        jbBuscar.requestFocusInWindow();
+        jbBuscar.requestFocus(true);
+        jbBuscar.requestFocus();   
+    }//GEN-LAST:event_telefonoActionPerformed
+
+    private void jbSalirKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jbSalirKeyPressed
+        if (evt.getKeyCode()==evt.VK_ENTER) dispose();
+    }//GEN-LAST:event_jbSalirKeyPressed
+
+    private void jbBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbBuscarActionPerformed
+        long tel = 0;
+        try {
+            tel = Long.parseLong(telefono.getText());
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this,  "Usted no ingresó un nro de correcto de teléfono ",
+                "ERROR!", JOptionPane.ERROR_MESSAGE);
+            telefono.selectAll();
+            telefono.setFocusable(true);
+            telefono.requestFocusInWindow();
+            telefono.requestFocus(true);
+            telefono.requestFocus();
+            return;
+        }
+        if (directorio.buscarCliente(tel)==null) {
+            JOptionPane.showMessageDialog(this,  "No se encontró ningun cliente",
+                    "ERROR!", JOptionPane.ERROR_MESSAGE);
+            telefono.selectAll();
+            telefono.setFocusable(true);
+            telefono.requestFocusInWindow();
+            telefono.requestFocus(true);
+            telefono.requestFocus();
+        } else {
+            apellido.setText(directorio.buscarCliente(tel).getApellido());
+            nombre.setText(directorio.buscarCliente(tel).getNombre());
+            ciudad.setText(directorio.buscarCliente(tel).getCiudad());
+            direccion.setText(directorio.buscarCliente(tel).getDomicilio());
+            dni.setText(directorio.buscarCliente(tel).getDni()+"");
+
+        }
+    }//GEN-LAST:event_jbBuscarActionPerformed
+
+    private void jbBuscarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jbBuscarKeyPressed
+        if (evt.getKeyCode()==evt.VK_ENTER) jbBuscar.doClick();
+    }//GEN-LAST:event_jbBuscarKeyPressed
+
+    private void jbNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbNuevoActionPerformed
+        apellido.setText("");
+        nombre.setText("");
+        ciudad.setText("");
+        direccion.setText("");
+        dni.setText("");   
+        telefono.setText("");
+        telefono.setFocusable(true);
+        telefono.requestFocusInWindow();
+        telefono.requestFocus(true);
+        telefono.requestFocus();
+    }//GEN-LAST:event_jbNuevoActionPerformed
+
+    private void jbNuevoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jbNuevoKeyPressed
+        if (evt.getKeyCode()==evt.VK_ENTER) jbNuevo.doClick();
+    }//GEN-LAST:event_jbNuevoKeyPressed
+
+    private void formFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_formFocusGained
+        telefono.setFocusable(true);
+        telefono.requestFocusInWindow();
+        telefono.requestFocus(true);
+        telefono.requestFocus();
+    }//GEN-LAST:event_formFocusGained
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField apellido;
     private javax.swing.JTextField ciudad;
+    private javax.swing.JTextField direccion;
     private javax.swing.JTextField dni;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JButton jbBuscar;
+    private javax.swing.JButton jbNuevo;
     private javax.swing.JButton jbSalir;
     private javax.swing.JTextField nombre;
     private javax.swing.JTextField telefono;

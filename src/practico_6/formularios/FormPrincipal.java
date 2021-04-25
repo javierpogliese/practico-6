@@ -35,39 +35,79 @@ public class FormPrincipal extends javax.swing.JFrame {
 
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenu1 = new javax.swing.JMenu();
+        jMenu2 = new javax.swing.JMenu();
+        jMenuItem3 = new javax.swing.JMenuItem();
+        jMenuItem4 = new javax.swing.JMenuItem();
+        jMenuBar2 = new javax.swing.JMenuBar();
+        jMenu3 = new javax.swing.JMenu();
+        jMenu4 = new javax.swing.JMenu();
+        jMenu5 = new javax.swing.JMenu();
         jdpEscritorio = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         jmClientes = new javax.swing.JMenu();
+        jmiBuscar = new javax.swing.JMenuItem();
         jmiBuscarTel = new javax.swing.JMenuItem();
         jmiBuscarApe = new javax.swing.JMenuItem();
-        jmiBuscar = new javax.swing.JMenuItem();
         jmEditar = new javax.swing.JMenu();
         jmiAgregar = new javax.swing.JMenuItem();
         jmiBorrar = new javax.swing.JMenuItem();
+        jMSalir = new javax.swing.JMenu();
+        jMiSalir = new javax.swing.JMenuItem();
 
         jMenuItem1.setText("jMenuItem1");
 
         jMenuItem5.setText("jMenuItem5");
 
+        jMenuItem2.setText("jMenuItem2");
+
+        jMenu1.setText("jMenu1");
+
+        jMenu2.setText("jMenu2");
+
+        jMenuItem3.setText("jMenuItem3");
+
+        jMenuItem4.setText("jMenuItem4");
+
+        jMenu3.setText("File");
+        jMenuBar2.add(jMenu3);
+
+        jMenu4.setText("Edit");
+        jMenuBar2.add(jMenu4);
+
+        jMenu5.setText("jMenu5");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(610, 400));
 
         javax.swing.GroupLayout jdpEscritorioLayout = new javax.swing.GroupLayout(jdpEscritorio);
         jdpEscritorio.setLayout(jdpEscritorioLayout);
         jdpEscritorioLayout.setHorizontalGroup(
             jdpEscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 386, Short.MAX_VALUE)
+            .addGap(0, 621, Short.MAX_VALUE)
         );
         jdpEscritorioLayout.setVerticalGroup(
             jdpEscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 324, Short.MAX_VALUE)
+            .addGap(0, 335, Short.MAX_VALUE)
         );
 
         jMenuBar1.setNextFocusableComponent(jmClientes);
 
         jmClientes.setText("Clientes");
 
+        jmiBuscar.setText("Buscar clientes");
+        jmiBuscar.setPreferredSize(new java.awt.Dimension(150, 22));
+        jmiBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmiBuscarActionPerformed(evt);
+            }
+        });
+        jmClientes.add(jmiBuscar);
+
         jmiBuscarTel.setText("Buscar por telefono");
         jmiBuscarTel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jmiBuscarTel.setPreferredSize(new java.awt.Dimension(125, 22));
         jmiBuscarTel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jmiBuscarTelActionPerformed(evt);
@@ -76,10 +116,13 @@ public class FormPrincipal extends javax.swing.JFrame {
         jmClientes.add(jmiBuscarTel);
 
         jmiBuscarApe.setText("Buscar por apellido");
+        jmiBuscarApe.setPreferredSize(new java.awt.Dimension(125, 22));
+        jmiBuscarApe.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmiBuscarApeActionPerformed(evt);
+            }
+        });
         jmClientes.add(jmiBuscarApe);
-
-        jmiBuscar.setText("Buscar clientes");
-        jmClientes.add(jmiBuscar);
 
         jMenuBar1.add(jmClientes);
 
@@ -103,23 +146,43 @@ public class FormPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(jmEditar);
 
+        jMSalir.setText("Salir");
+        jMSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMSalirActionPerformed(evt);
+            }
+        });
+        jMSalir.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jMSalirKeyPressed(evt);
+            }
+        });
+
+        jMiSalir.setText("Salir del programa");
+        jMiSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMiSalirActionPerformed(evt);
+            }
+        });
+        jMSalir.add(jMiSalir);
+
+        jMenuBar1.add(jMSalir);
+
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jdpEscritorio)
-                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jdpEscritorio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jdpEscritorio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jdpEscritorio)
+                .addContainerGap())
         );
 
         pack();
@@ -132,6 +195,10 @@ public class FormPrincipal extends javax.swing.JFrame {
         ac.setVisible(true);
         jdpEscritorio.add(ac);
         jdpEscritorio.moveToFront(ac);
+        ac.setFocusable(true);
+        ac.requestFocusInWindow();
+        ac.requestFocus(true);
+        ac.requestFocus();
     }//GEN-LAST:event_jmiAgregarActionPerformed
 
     private void jmiBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiBorrarActionPerformed
@@ -141,16 +208,62 @@ public class FormPrincipal extends javax.swing.JFrame {
         bc.setVisible(true);
         jdpEscritorio.add(bc);
         jdpEscritorio.moveToFront(bc);
+        bc.setFocusable(true);
+        bc.requestFocusInWindow();
+        bc.requestFocus(true);
+        bc.requestFocus();
     }//GEN-LAST:event_jmiBorrarActionPerformed
 
     private void jmiBuscarTelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiBuscarTelActionPerformed
         jdpEscritorio.removeAll(); 
         jdpEscritorio.repaint();
-        BuscarTelefono bt = new BuscarTelefono();
+        BuscarTelefono bt = new BuscarTelefono(directorio);
         bt.setVisible(true);
         jdpEscritorio.add(bt);
         jdpEscritorio.moveToFront(bt);
+        bt.setFocusable(true);
+        bt.requestFocusInWindow();
+        bt.requestFocus(true);
+        bt.requestFocus();
     }//GEN-LAST:event_jmiBuscarTelActionPerformed
+
+    private void jMSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMSalirActionPerformed
+        
+    }//GEN-LAST:event_jMSalirActionPerformed
+
+    private void jMSalirKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jMSalirKeyPressed
+        if (evt.getKeyCode()==evt.VK_ENTER) dispose();
+    }//GEN-LAST:event_jMSalirKeyPressed
+
+    private void jMiSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMiSalirActionPerformed
+        dispose();
+    }//GEN-LAST:event_jMiSalirActionPerformed
+
+    private void jmiBuscarApeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiBuscarApeActionPerformed
+        jdpEscritorio.removeAll(); 
+        jdpEscritorio.repaint();
+        BuscarClientes bca = new BuscarClientes(directorio);
+        bca.setVisible(true);
+        jdpEscritorio.add(bca);
+        jdpEscritorio.moveToFront(bca);
+        bca.setFocusable(true);
+        bca.requestFocusInWindow();
+        bca.requestFocus(true);
+        bca.requestFocus();
+    }//GEN-LAST:event_jmiBuscarApeActionPerformed
+
+    private void jmiBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiBuscarActionPerformed
+        jdpEscritorio.removeAll(); 
+        jdpEscritorio.repaint();
+        BuscarCiudad bcc = new BuscarCiudad(directorio);
+        bcc.setVisible(true);
+        jdpEscritorio.add(bcc);
+        jdpEscritorio.moveToFront(bcc);
+        bcc.setFocusable(true);
+        bcc.requestFocusInWindow();
+        bcc.requestFocus(true);
+        bcc.requestFocus();
+    }//GEN-LAST:event_jmiBuscarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -167,9 +280,20 @@ public class FormPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenu jMSalir;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JMenuItem jMiSalir;
     private javax.swing.JDesktopPane jdpEscritorio;
     private javax.swing.JMenu jmClientes;
     private javax.swing.JMenu jmEditar;

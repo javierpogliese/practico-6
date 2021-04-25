@@ -23,6 +23,7 @@ public class AgregarClientes extends javax.swing.JInternalFrame {
     public AgregarClientes(Directorio directorio) {
         this.directorio = directorio;
         initComponents();
+
     }
 
     /**
@@ -55,6 +56,7 @@ public class AgregarClientes extends javax.swing.JInternalFrame {
         setToolTipText("");
         setName(""); // NOI18N
         setNextFocusableComponent(dni);
+        setPreferredSize(new java.awt.Dimension(610, 340));
         addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 formFocusGained(evt);
@@ -231,7 +233,7 @@ public class AgregarClientes extends javax.swing.JInternalFrame {
                         .addComponent(nuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(salir, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(36, Short.MAX_VALUE))
+                .addContainerGap(254, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

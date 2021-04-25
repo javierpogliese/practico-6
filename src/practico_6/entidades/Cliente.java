@@ -25,10 +25,23 @@ public class Cliente {
         this.domicilio = domicilio;
     }
 
-    @Override
-    public String toString() {
-        return "Cliente{" + "dni=" + dni + ", apellido=" + apellido + ", nombre=" + nombre + ", ciudad=" + ciudad + ", domicilio=" + domicilio + '}';
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
     }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setCiudad(String ciudad) {
+        this.ciudad = ciudad;
+    }
+
+    public void setDomicilio(String domicilio) {
+        this.domicilio = domicilio;
+    }
+
+
 
     public long getDni() {
         return dni;

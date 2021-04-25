@@ -21,6 +21,7 @@ public class BorrarClientes extends javax.swing.JInternalFrame {
     public BorrarClientes(Directorio directorio) {
         this.directorio = directorio;
         initComponents();
+
     }
 
     /**
@@ -49,7 +50,14 @@ public class BorrarClientes extends javax.swing.JInternalFrame {
         direccion = new javax.swing.JTextField();
 
         setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        setTitle("Eliminar Clientes");
         setNextFocusableComponent(dni);
+        setPreferredSize(new java.awt.Dimension(610, 340));
+        addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                formFocusGained(evt);
+            }
+        });
 
         dni.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         dni.setName(""); // NOI18N
@@ -181,7 +189,7 @@ public class BorrarClientes extends javax.swing.JInternalFrame {
                                 .addComponent(dni, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(18, 18, 18)
                         .addComponent(jbBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(49, Short.MAX_VALUE))
+                .addContainerGap(249, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -315,6 +323,13 @@ public class BorrarClientes extends javax.swing.JInternalFrame {
     private void jbBorrarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jbBorrarKeyPressed
         if (evt.getKeyCode()==evt.VK_ENTER) jbBorrar.doClick();
     }//GEN-LAST:event_jbBorrarKeyPressed
+
+    private void formFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_formFocusGained
+        dni.setFocusable(true);
+        dni.requestFocusInWindow();
+        dni.requestFocus(true);
+        dni.requestFocus();
+    }//GEN-LAST:event_formFocusGained
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
